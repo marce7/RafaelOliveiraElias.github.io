@@ -1,26 +1,117 @@
 * {
   margin: 0;
-  padding: 0%;;
+  padding: 0%;
+}
+header{
+  height: 600px;
+}
+a{
+  text-decoration: none;
+  
+}
+a:visited { 
+  text-decoration: none; 
+  }
+a:hover{
+  background-color: #1f1f1f;
 }
 .titles{
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Ubuntu', sans-serif;
   color: #00E200;
   font-size: 30px;
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
 }
+
 .logo{
-  font-family: 'Courier New', Courier, monospace;
-  margin-left: 22%;
+position: absolute;
+top: 5px;
+right: 45%;
+
 }
-.header{
+.links {
+  float: left;
+  width: 1000px;
+  height: 300px;
+  position: absolute;
+  top: -3%;
+  left: 7%;
+}
+.git{
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+.git:hover{
+  position: absolute;
+  top: 5%;
+  left: 0%;
+;
+  transition: 1s;
+}
+.git:active{
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  filter: saturate(3207%);
  
-  background: #219116;
+}
+
+.likedin{
+  position: absolute;
+  left: 5% ;
+  top: 0;
+}
+
+.likedin:hover{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  filter: grayscale(100%);
+  transition: 1s;
+}
+
+.instagram{
+  position: absolute;
+  left: 10% ;
+  top: 0;
+}
+.instagram:hover{
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  filter: grayscale(100%);
+  transition: 1s;
+}
+
+.da{
+  position: absolute;
+  left: 15% ;
+  top: 0;
+}
+
+.da:hover{
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  filter: grayscale(100%);
+  transition: 1s;
+}
+
+.header1{
+  background: #1f1f1f;  
   height: 25px;
+  z-index: 2;
+}
+.blacktop{
+  background: black;
+  height: 20px;
 }
 .sumary{
-  float:left;
-  margin-left: 5%;
+  clear: right;
+  position:absolute;
+  right: 60px;
+  top: 8px;
 }
 div.header h1{
   clear: left;
@@ -28,22 +119,70 @@ div.header h1{
   
 }
 #foto{
-  border-radius: 7%;
-  width: 30%;
-  float: right;
-  margin-right: 12%;
-  }
-.photo-container {
+  width: auto;
+  height: auto;
+  margin-left: 57%;
+  margin-top: 2%;
 
-  height: 500px;
+}
+.Trybe{
+  font-weight: 900;
+  font-size: 30px;
+  text-decoration: underline;
+  color: #00E200;  
+}
+.photo-container {
+  
+  background-image: url("wood.jpg") ;
+  background-size: 105%;
+   /*
+  background-image: url("https://wallpapercave.com/wp/wp2742751.jpg") ;
+  
+  background-image: url("http://cdn30.us1.fansshare.com/image/backgroundvector/art-black-background-vector-pattern-carbon-backround-black-1332181988.jpg") ;*/
+ 
+  height: 575px;
+  z-index: 1;
+}
+
+#explosão1{
+ 
+  position: absolute;
+  top: 150px;
+  left: 0%;
+  z-index: 1;
+}
+#explosão2{
+  width: ;
+  position: absolute;
+  top: px;
+  right: 0% ;
+}
+.descricao{
+  font-weight: 400;
+  position: absolute;
+  top: 35%;
+  right: 46%;
+  font-size: 25px;
+  text-align: center;
+  width: 700px;
+  z-index: 2;
+
+}
+.nome{
+  position: absolute;
+  font-size: 30px;
+  top: 25%;
+  width: 800px;
+  right: 43%;
+  color: #00E200;
 }
 body{
-    font-family:  Arial, Helvetica, sans-serif;
-    font-weight: 100;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
     color: #ffffff;
     background: #0D0D0D;
   }
 
 div{
-  border: 2px solid #00E200;
+
 }

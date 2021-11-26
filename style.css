@@ -7,13 +7,13 @@ header{
 }
 a{
   text-decoration: none;
-  
+  color: #00E200;
 }
 a:visited { 
   text-decoration: none; 
   }
 a:hover{
-  background-color: #1f1f1f;
+  text-decoration: none
 }
 .titles{
   font-family: 'Ubuntu', sans-serif;
@@ -24,9 +24,9 @@ a:hover{
 }
 
 .logo{
-position: absolute;
-top: 5px;
-right: 45%;
+text-align: center;
+position: relative;
+top: 33%;
 
 }
 .links {
@@ -44,14 +44,14 @@ right: 45%;
 }
 .git:hover{
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 0%;
-;
+  filter: grayscale(100%) ;
   transition: 1s;
 }
 .git:active{
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 0%;
   filter: saturate(3207%);
  
@@ -65,10 +65,18 @@ right: 45%;
 
 .likedin:hover{
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 5%;
   filter: grayscale(100%);
   transition: 1s;
+}
+
+.likedin:active{
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  filter: saturate(3207%);
+ 
 }
 
 .instagram{
@@ -78,10 +86,17 @@ right: 45%;
 }
 .instagram:hover{
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 10%;
   filter: grayscale(100%);
   transition: 1s;
+}
+
+.instagram:active{
+  position: absolute;
+  top: 3%;
+  left: 10%;
+  filter: saturate(3207%);
 }
 
 .da{
@@ -92,10 +107,16 @@ right: 45%;
 
 .da:hover{
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 15%;
   filter: grayscale(100%);
   transition: 1s;
+}
+.da:active{
+  position: absolute;
+  top: 3%;
+  left: 15%;
+  filter: saturate(3207%);
 }
 
 .header1{
@@ -111,7 +132,7 @@ right: 45%;
   clear: right;
   position:absolute;
   right: 60px;
-  top: 8px;
+  top: 1.5%;
 }
 div.header h1{
   clear: left;
@@ -119,8 +140,7 @@ div.header h1{
   
 }
 #foto{
-  width: auto;
-  height: auto;
+
   margin-left: 57%;
   margin-top: 2%;
 
@@ -140,7 +160,7 @@ div.header h1{
   
   background-image: url("http://cdn30.us1.fansshare.com/image/backgroundvector/art-black-background-vector-pattern-carbon-backround-black-1332181988.jpg") ;*/
  
-  height: 575px;
+  height: 555px;
   z-index: 1;
 }
 
@@ -183,6 +203,37 @@ body{
     background: #0D0D0D;
   }
 
-div{
+.baixo{
+  height: 1500px;
+}
 
+.sobremim{
+  position: relative;
+  left: 22%;
+  top: 40%;
+  display: block;
+  height: 500px;
+  text-align: center;
+  width: 1100px;
+  font-size: 20px;
+}
+.sobremim h2{
+  font-size: 80px;
+  display: block;
+  margin-bottom: 50px;
+}
+.duascaixas{
+  display: block;
+  height: 500px;
+  background-color: black;
+}
+.habilidades {
+  list-style:circle ;
+  font-size: 25px;
+  width: 800px;
+}
+
+footer{
+  display: block;
+  background-color: blanchedalmond;
 }

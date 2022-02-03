@@ -1,0 +1,177 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
+}
+header{
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header h1{
+  color: aliceblue;
+}
+html {
+  background: url('https://cutewallpaper.org/21/pixel-art-desktop-background/150-Lovely-Pokemon-Pixel-Background-This-Month-Cameeron-Web.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  height: auto;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.0);
+  display: flex;
+  margin: 0;
+}
+aside {
+  background-color: red;
+  justify-self:flex-start;
+  width: 1000px;
+  justify-self: end;
+  height: 800px;
+  margin-top: 100px;
+  position: fixed;
+  margin-left: 1000px;
+  border-radius: 55px;
+}
+
+li {
+  position: sticky;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 225px;
+  width: 225px;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10%;
+  transition: all 200ms ease-out;
+}
+li:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 35px rgb(255, 255, 255);
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 5px;
+}
+#pkmncontainer {
+  width: 910px;
+  margin-top: 70px
+}
+#firstPageText {
+  --b:5px;  /* the thickness */
+  --c:#000; /* the color */
+  width: 215px;
+  min-height: 100px;
+  padding:calc(5*var(--b));
+  position:relative;
+}
+  
+#firstPageText::before,
+#firstPageText::after { 
+  content:"";
+  position:absolute;
+  inset:0 0 50% 0;
+  background:
+    linear-gradient(var(--c) 0 0) 50%   0  /calc(100% - 4*var(--b)) var(--b),
+    linear-gradient(var(--c) 0 0) 0%   100%/var(--b) calc(100% - 2*var(--b)),
+    linear-gradient(var(--c) 0 0) 100% 100%/var(--b) calc(100% - 2*var(--b)),
+    conic-gradient(from  90deg,var(--c) 90deg,#0000 0) 0    0/calc(2*var(--b)) calc(2*var(--b)),
+    conic-gradient(from 180deg,var(--c) 90deg,#0000 0) 100% 0/calc(2*var(--b)) calc(2*var(--b));
+  background-repeat:no-repeat;
+}
+#firstPageText::after {
+  transform-origin:bottom;
+  transform:scaleY(-1);
+}
+/* CSS */
+.button-19 {
+  appearance: button;
+  background-color: #5db9ff;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+.names {
+  text-shadow: 2px 2px white;
+  font-size: 1.2em;
+}
+#containerHeader {
+  width: 100%;
+  display: flex;
+  color: white;
+  font-weight: 900;
+  -webkit-text-stroke: 1px #e4e4e4; /* width and color */
+  justify-content: center;
+  align-items: center;
+  font-size: 3.2em;
+  font-size: sans-serif;
+  height: 200px;
+}

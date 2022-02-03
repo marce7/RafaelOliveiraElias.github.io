@@ -33,7 +33,10 @@ body {
   margin: 0;
 }
 aside {
-  background-color: red;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-style: groove;
   justify-self:flex-start;
   width: 1000px;
   justify-self: end;
@@ -41,7 +44,7 @@ aside {
   margin-top: 100px;
   position: fixed;
   margin-left: 1000px;
-  border-radius: 55px;
+  border-radius: 90px;
 }
 
 li {

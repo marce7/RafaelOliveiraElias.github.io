@@ -8,6 +8,27 @@ const gen7 =[722, 809, 'gen7'];
 const todasGens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, ]
 const buttons = document.getElementById('buttons');
 
+function addendTyper(data1,appendend) {
+  const divType = document.createElement('div');
+  const imgType1 = document.createElement('img');
+  const imgType2 = document.createElement('img');
+
+  if (data1.types.length === 1) {
+    imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`
+    imgType1.style.width = '80px';
+    divType.appendChild(imgType1);
+    li.appendChild(divType);
+  }
+  if (data1.types.length === 2) {
+    imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`
+    imgType1.style.width = '80px';
+    imgType2.src = `./iconsTypes/${data1.types[1].type.name}.png`
+    imgType2.style.width = '80px';
+    divType.appendChild(imgType1);
+    divType.appendChild(imgType2);
+    appendend.appendChild(divType);
+  }
+}
 
 function append(data) {
   const ul = document.querySelector('ul');
@@ -15,12 +36,8 @@ function append(data) {
   const li = document.createElement('li');
   const divNome = document.createElement('div');
   const divImage = document.createElement('div');
-  const divType = document.createElement('div');
 
   const img = document.createElement('img');
-  const imgType1 = document.createElement('img');
-  const imgType2 = document.createElement('img');
-
 
   divNome.innerHTML = data.name;
   divNome.className = 'names';
@@ -30,21 +47,37 @@ function append(data) {
   li.appendChild(divNome);
   li.appendChild(divImage);
 
-  if (data.types.length === 1) {
-    imgType1.src = `./iconsTypes/${data.types[0].type.name}.png`
-    imgType1.style.width = '80px';
-    divType.appendChild(imgType1);
-    li.appendChild(divType);
-  }
-  if (data.types.length === 2) {
-    imgType1.src = `./iconsTypes/${data.types[0].type.name}.png`
-    imgType1.style.width = '80px';
-    imgType2.src = `./iconsTypes/${data.types[1].type.name}.png`
-    imgType2.style.width = '80px';
-    divType.appendChild(imgType1);
-    divType.appendChild(imgType2);
-    li.appendChild(divType);
-  }
+  addendTyper(data,li);
+
+  li.addEventListener('click', ()=> {
+    document.getElementById('pkmnSelect').innerText = data.name;
+    const mapAbilities = data.abilities;
+    document.getElementById('pkmnSelectAbilities').innerText = mapAbilities;
+    document.getElementById('pkmnSelectHeight').innerText = data.height;
+    document.getElementById('pkmnSelectWeight').innerText = data.weight;
+    const teste = document.getElementById('pkmnSelectType')
+    while (teste.firstChild) {
+      teste.removeChild(teste.lastChild);
+    }
+    addendTyper(data, document.getElementById('pkmnSelectType'));
+
+    const imagesWhile = document.getElementById('pkmnSelectImg');
+    while (imagesWhile.firstChild) {
+      imagesWhile.removeChild(imagesWhile.lastChild);
+    }
+    const imgF = document.createElement('img');
+    imgF.src = data.oficialArt;
+    imagesWhile.appendChild(imgF);
+
+    const imagesWhileS = document.getElementById('pkmnSelectImgShinny');
+    while (imagesWhileS.firstChild) {
+      imagesWhileS.removeChild(imagesWhileS.lastChild);
+    }
+    const imgFS = document.createElement('img');
+    imgFS.src = data.frontShiny;
+    imagesWhileS.appendChild(imgFS);
+    
+    })
   li.id = "firstPageText";
   ul.appendChild(li);
 }
@@ -53,7 +86,12 @@ function extractNameAndImage(pokemonData) {
   return {
     name: `${pokemonData.name.charAt(0).toUpperCase()}${pokemonData.name.slice(1)}`,
     imageUrl: pokemonData.sprites.front_default,
-    types: pokemonData.types
+    types: pokemonData.types,
+    abilities: pokemonData.abilities.map((each) => each.ability.name),
+    height: `${(pokemonData.height*0.1).toFixed(1)} m`,
+    weight: `${(pokemonData.weight*0.1).toFixed(1)} kg`,
+    oficialArt: pokemonData.sprites.other['official-artwork'].front_default,
+    frontShiny: pokemonData.sprites.front_shiny
   };
 }
 
@@ -69,13 +107,6 @@ async function fetchPokemon(pokemoNumber) {
   }
 }
 
-function requestPokemons() {
-  fetchPokemon('ditto');
-  fetchPokemon('bulbasaur');
-  fetchPokemon('charmander');
-  fetchPokemon('squirtle');
-  fetchPokemon('dratini');
-}
 
 async function fetchPokemonData(pokemoNumber) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemoNumber}`);
@@ -90,7 +121,6 @@ async function fetchPokemonAsyncAwait(gen = [1 , 151]) {
     for (let index = gen[0]; index <= gen[1]; index += 1 ) {
       listOfFunctions.push(await fetchPokemon(`${index}`))
     }
-    console.log(listOfFunctions)
     const pokemonDataList = await Promise.all(listOfFunctions);
 
     const pokemonList = pokemonDataList.map(extractNameAndImage);

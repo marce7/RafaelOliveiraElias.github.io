@@ -17,7 +17,7 @@ function addendTyper(data1,appendend) {
     imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`
     imgType1.style.width = '80px';
     divType.appendChild(imgType1);
-    li.appendChild(divType);
+    appendend.appendChild(divType);
   }
   if (data1.types.length === 2) {
     imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`

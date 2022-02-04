@@ -22,22 +22,33 @@
       <button class="button-19" id="gen7" role="button">Geração 7</button>
     </div>
   </header>
+  <aside>
+    <h2>Selecionado:</h2>
+    <div>
+      <span id="pkmnSelect">Bulbasaur</span>
+    </div>
+    <div>
+      <h3>Abilities: </h3><span id="pkmnSelectAbilities">overgrow, chlorophyll</span>
+    </div>
+    <div>
+      <h3>Height: </h3><span id="pkmnSelectHeight">0.7 m</span>
+    </div>
+    <div>
+      <h3>Weight: </h3><span id="pkmnSelectWeight">6.9 kg</span>
+    </div>
+    <div id="pkmnSelectImg"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"></div>
+    <div id="pkmnSelectImgShinny"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"></div>
+    <div>
+      <h3 id="h3type">Types: </h3>
+      <div id="pkmnSelectType"><div class="typeSelectDuo"><img src="./iconsTypes/grass.png" style="width: 80px;"><img src="./iconsTypes/poison.png" style="width: 80px;"></div></div>
+    </div>
+  </aside>
   <div id='pkmncontainer'>
     <div id='containerHeader'> 
       <h1 id="genName">Pokedex Gen 1</h1>
     </div>
     <ul></ul>
   </div>
-  <aside>
-    <h2>Selecionado:</h2>
-    <span id="pkmnSelect"></span>
-    <span id="pkmnSelectAbilities"></span>
-    <span id="pkmnSelectHeight"></span>
-    <span id="pkmnSelectWeight"></span>
-    <div id="pkmnSelectImg"></div>
-    <div id="pkmnSelectImgShinny"></div>
-    <div id="pkmnSelectType"></div>
-  </aside>
 </body>
 <script src="script-final.js"></script>
 </html>

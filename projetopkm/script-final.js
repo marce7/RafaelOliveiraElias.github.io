@@ -7,8 +7,9 @@ const gen6 =[650, 721, 'gen6'];
 const gen7 =[722, 809, 'gen7'];
 const todasGens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, ]
 const buttons = document.getElementById('buttons');
+const h3type = document.getElementById('h3type');
 
-function addendTyper(data1,appendend) {
+function addendTyper(data1,appendend,class1) {
   const divType = document.createElement('div');
   const imgType1 = document.createElement('img');
   const imgType2 = document.createElement('img');
@@ -17,7 +18,9 @@ function addendTyper(data1,appendend) {
     imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`
     imgType1.style.width = '80px';
     divType.appendChild(imgType1);
+    divType.className = class1 + 'Solo'
     appendend.appendChild(divType);
+    return 'Type: '
   }
   if (data1.types.length === 2) {
     imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`
@@ -26,7 +29,9 @@ function addendTyper(data1,appendend) {
     imgType2.style.width = '80px';
     divType.appendChild(imgType1);
     divType.appendChild(imgType2);
+    divType.className = class1 + 'Duo'
     appendend.appendChild(divType);
+    return 'Types: '
   }
 }
 
@@ -42,14 +47,15 @@ function append(data) {
   divNome.innerHTML = data.name;
   divNome.className = 'names';
   img.src = data.imageUrl;
+  divImage.className = 'icons1'
   divImage.appendChild(img);
 
   li.appendChild(divNome);
   li.appendChild(divImage);
 
-  addendTyper(data,li);
+  addendTyper(data,li,'typeIcons');
 
-  li.addEventListener('click', ()=> {
+  li.addEventListener('click', (event)=> {
     document.getElementById('pkmnSelect').innerText = data.name;
     const mapAbilities = data.abilities;
     document.getElementById('pkmnSelectAbilities').innerText = mapAbilities;
@@ -59,7 +65,7 @@ function append(data) {
     while (teste.firstChild) {
       teste.removeChild(teste.lastChild);
     }
-    addendTyper(data, document.getElementById('pkmnSelectType'));
+    h3type.innerText = addendTyper(data, document.getElementById('pkmnSelectType'), 'typeSelect');
 
     const imagesWhile = document.getElementById('pkmnSelectImg');
     while (imagesWhile.firstChild) {

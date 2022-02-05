@@ -7,9 +7,9 @@ const gen5 =[494, 649, 'gen5'];
 const gen6 =[650, 721, 'gen6'];
 const gen7 =[722, 809, 'gen7'];
 const gen8 =[810, 898, 'gen8'];
-
+// nao seria melhor criar uma classe gen?
 const todasGens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8]
-const buttons = document.getElementById('buttons');
+const buttons = document.getElementById('buttons'); //mantenha o padrão das nomenclaturas, ingles ou portugues?
 const h3type = document.getElementById('h3type');
 
 var xValues = ["HP", "Att", "Def", "S-Att", "S-Def", 'Spe'];
@@ -21,7 +21,7 @@ const chartXXX = new Chart("myChart", {
     datasets: [{
       label: false ,
       backgroundColor: barColors,
-      data: [45, 49, 49, 65, 65, 45]
+      data: [45, 49, 49, 65, 65, 45] // pq 'data' nao e uma variavel igual 'barColors'? 
     }],
   },
   options: {
@@ -42,7 +42,7 @@ const chartXXX = new Chart("myChart", {
     legend: {display: false},
     title: {
       display: false,
-      text: "World Wine Production 2018"
+      text: "World Wine Production 2018" // que isso?? kkkk
     }
  }
 });
@@ -56,7 +56,8 @@ function addendTyper(data1,appendend,class1) {
   const divType = document.createElement('div');
   const imgType1 = document.createElement('img');
   const imgType2 = document.createElement('img');
-
+  // e sempre bom fechar IFs com ELSE
+  // o conteudo desses IFs esta repetitivo, poderia transformar em uma funcao
   if (data1.types.length === 1) {
     imgType1.src = `./iconsTypes/${data1.types[0].type.name}.png`
     imgType1.style.width = '80px';
@@ -78,7 +79,8 @@ function addendTyper(data1,appendend,class1) {
   }
 }
 
-function append(data) {
+function append(data) { //esse nome de parametro poderia melhorar
+  // mantenha o padrão de espaços se vc começou sem colocar espçao entre as linhas continue assim
   const ul = document.querySelector('ul');
   
   const li = document.createElement('li');
@@ -105,7 +107,7 @@ function append(data) {
     document.getElementById('pkmnSelectHeight').innerText = data.height;
     document.getElementById('pkmnSelectWeight').innerText = data.weight;
     const teste = document.getElementById('pkmnSelectType')
-    while (teste.firstChild) {
+    while (teste.firstChild) { // esse while nao corre o risco de ficar um loop infinito?
       teste.removeChild(teste.lastChild);
     }
     h3type.innerText = addendTyper(data, document.getElementById('pkmnSelectType'), 'typeSelect');
@@ -130,7 +132,7 @@ function append(data) {
     })
   li.id = "firstPageText";
   ul.appendChild(li);
-}
+} // essa funcao esta muito grande, veja se e possivel diminuir, leia as secoes 5.4, 5.5 e 9.5 do livro que te passei 
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -157,8 +159,8 @@ function extractNameAndImage(pokemonData) {
 
 async function fetchPokemon(pokemoNumber) {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemoNumber}`);
-    const data = await response.json();
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemoNumber}`); // essa URL deveria ser um parametro, pois se precisar alterar, vc faz apenas uma vez
+    const data = await response.json(); //data de novo? e muito data
     const pokemon = extractNameAndImage(data);
 
     append(pokemon);
@@ -169,7 +171,7 @@ async function fetchPokemon(pokemoNumber) {
 
 
 async function fetchPokemonData(pokemoNumber) {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemoNumber}`);
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemoNumber}`); // essa URL deveria ser um parametro, pois se precisar alterar, vc faz apenas uma vez
   const data = await response.json();
   
   return data;
@@ -194,7 +196,7 @@ async function fetchPokemonAsyncAwait(gen = [1 , 151]) {
 window.onload = () => {
   fetchPokemonAsyncAwait();
   todasGens.forEach((cada) => {
-    document.getElementById(cada[2]).addEventListener('click', ()=>{
+    document.getElementById(cada[2]).addEventListener('click', ()=>{ // mantenha o padrão das nomenclaturas, ingles ou portugues?
       document.querySelectorAll('li').forEach((each) => each.remove())
       fetchPokemonAsyncAwait(cada)
       document.getElementById('genName').innerText = `Pokedex ${cada[2][0].toUpperCase()}${cada[2].slice(1,3)} ${cada[2][3]}`

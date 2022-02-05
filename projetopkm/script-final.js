@@ -6,7 +6,9 @@ const gen4 =[387, 493, 'gen4'];
 const gen5 =[494, 649, 'gen5'];
 const gen6 =[650, 721, 'gen6'];
 const gen7 =[722, 809, 'gen7'];
-const todasGens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, ]
+const gen8 =[810, 898, 'gen8'];
+
+const todasGens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8]
 const buttons = document.getElementById('buttons');
 const h3type = document.getElementById('h3type');
 

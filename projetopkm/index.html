@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 </head>
 <body>
   <header>
@@ -31,13 +32,25 @@
       <h3>Abilities: </h3><span id="pkmnSelectAbilities">overgrow, chlorophyll</span>
     </div>
     <div>
-      <h3>Height: </h3><span id="pkmnSelectHeight">0.7 m</span>
-    </div>
-    <div>
+      <h3>Height: </h3><span id="pkmnSelectHeight">0.7 m</span><p></p><p></p><p></p><p></p>
       <h3>Weight: </h3><span id="pkmnSelectWeight">6.9 kg</span>
     </div>
     <div id="pkmnSelectImg"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"></div>
-    <div id="pkmnSelectImgShinny"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"></div>
+
+    <div>
+      <div id="shinyTipoCont">
+        <h3>Shiny: </h3>
+        <div id="containerShinny">
+          <div id="pkmnSelectImgShinny">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png">
+        </div>
+      </div>
+      </div>
+      <div id="chartContainer">
+        <canvas id="myChart" style="width: 200px; height: 150px;"></canvas>
+      </div>
+    </div>
+    
     <div>
       <h3 id="h3type">Types: </h3>
       <div id="pkmnSelectType"><div class="typeSelectDuo"><img src="./iconsTypes/grass.png" style="width: 80px;"><img src="./iconsTypes/poison.png" style="width: 80px;"></div></div>
@@ -49,6 +62,7 @@
     </div>
     <ul></ul>
   </div>
-</body>
+  
+  </body>
 <script src="script-final.js"></script>
 </html>

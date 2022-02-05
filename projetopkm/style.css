@@ -57,8 +57,8 @@ aside {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 90px;
   border-style: inset;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
 }
 #pkmnSelectImg img{
   max-width: 100%;
@@ -144,7 +144,43 @@ ul {
   padding:calc(5*var(--b));
   position:relative;
 }
-  
+#containerShinny{
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 125px;
+  height: 125px;
+  border-radius: 15px;
+  border-style: inset;
+    display: flex;
+  flex-direction: column;
+}
+#shinyTipoCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+
+}
+#pkmnSelectImgShinny img{
+  height: 125px;
+  width: 125px;
+}
+
+#chartContainer {
+  width: 300px;
+  height:200px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#myChart {
+  max-width: 100%;
+  max-height: 100% ;
+}
+
+
 #firstPageText::before,
 #firstPageText::after { 
   content:"";
@@ -162,6 +198,7 @@ ul {
   transform-origin:bottom;
   transform:scaleY(-1);
 }
+
 /* CSS */
 .button-19 {
   appearance: button;

@@ -1,3 +1,4 @@
+
 const gen1 =[1, 151, 'gen1'];
 const gen2 =[152, 251, 'gen2'];
 const gen3 =[252, 386, 'gen3'];
@@ -8,6 +9,46 @@ const gen7 =[722, 809, 'gen7'];
 const todasGens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, ]
 const buttons = document.getElementById('buttons');
 const h3type = document.getElementById('h3type');
+
+var xValues = ["HP", "Att", "Def", "S-Att", "S-Def", 'Spe'];
+var barColors = ["#CC0000", "#CC0000","#CC0000","#CC0000","#CC0000", "#CC0000"];
+const chartXXX = new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      label: false ,
+      backgroundColor: barColors,
+      data: [45, 49, 49, 65, 65, 45]
+    }],
+  },
+  options: {
+    tooltips: {enabled: false},
+    hover: {mode: null},
+    scales: {
+      y: {
+        suggestedMin: 0,
+        suggestedMax: 120,   
+        beginAtZero: true
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+    legend: {display: false},
+    title: {
+      display: false,
+      text: "World Wine Production 2018"
+    }
+ }
+});
+
+function generateGraphic(values) {
+  chartXXX.data.datasets[0].data = values
+  chartXXX.update();
+}
 
 function addendTyper(data1,appendend,class1) {
   const divType = document.createElement('div');
@@ -82,7 +123,9 @@ function append(data) {
     const imgFS = document.createElement('img');
     imgFS.src = data.frontShiny;
     imagesWhileS.appendChild(imgFS);
-    
+    const arrayValues = [data.hp, data.att, data.def, data.spa, data.sdf, data.spe]
+    console.log(arrayValues);
+    generateGraphic(arrayValues);
     })
   li.id = "firstPageText";
   ul.appendChild(li);
@@ -97,7 +140,13 @@ function extractNameAndImage(pokemonData) {
     height: `${(pokemonData.height*0.1).toFixed(1)} m`,
     weight: `${(pokemonData.weight*0.1).toFixed(1)} kg`,
     oficialArt: pokemonData.sprites.other['official-artwork'].front_default,
-    frontShiny: pokemonData.sprites.front_shiny
+    frontShiny: pokemonData.sprites.front_shiny,
+    hp: pokemonData.stats[0].base_stat,
+    att: pokemonData.stats[1].base_stat,
+    def: pokemonData.stats[2].base_stat,
+    spa: pokemonData.stats[3].base_stat,
+    sdf: pokemonData.stats[4].base_stat,
+    spe: pokemonData.stats[5].base_stat,
   };
 }
 
@@ -147,3 +196,4 @@ window.onload = () => {
     })
   })
 };
+

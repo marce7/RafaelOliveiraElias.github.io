@@ -149,8 +149,8 @@ ul {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(10px);
-  width: 125px;
-  height: 125px;
+  width: 160px;
+  height: 160px;
   border-radius: 15px;
   border-style: inset;
     display: flex;
@@ -160,26 +160,32 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 130px;
+  width: 160px;
 
 }
 #pkmnSelectImgShinny img{
-  height: 125px;
-  width: 125px;
+  height: 160px;
+  width: 160px;
 }
 
 #chartContainer {
   width: 300px;
   height:200px;
-  margin-left: 30px;
   margin-bottom: 20px;
-  margin-top: 20px;
 }
 #myChart {
   max-width: 100%;
   max-height: 100% ;
 }
 
+#tipoChart {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  justify-content: center;
+  margin-left: 50px;
+  margin-top: 20px;
+}
 
 #firstPageText::before,
 #firstPageText::after { 

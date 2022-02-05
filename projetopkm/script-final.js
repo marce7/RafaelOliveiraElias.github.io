@@ -124,11 +124,14 @@ function append(data) {
     imgFS.src = data.frontShiny;
     imagesWhileS.appendChild(imgFS);
     const arrayValues = [data.hp, data.att, data.def, data.spa, data.sdf, data.spe]
-    console.log(arrayValues);
     generateGraphic(arrayValues);
     })
   li.id = "firstPageText";
   ul.appendChild(li);
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function extractNameAndImage(pokemonData) {
@@ -136,7 +139,7 @@ function extractNameAndImage(pokemonData) {
     name: `${pokemonData.name.charAt(0).toUpperCase()}${pokemonData.name.slice(1)}`,
     imageUrl: pokemonData.sprites.front_default,
     types: pokemonData.types,
-    abilities: pokemonData.abilities.map((each) => each.ability.name),
+    abilities: pokemonData.abilities.map((each) => ' ' + capitalizeFirstLetter(each.ability.name)),
     height: `${(pokemonData.height*0.1).toFixed(1)} m`,
     weight: `${(pokemonData.weight*0.1).toFixed(1)} kg`,
     oficialArt: pokemonData.sprites.other['official-artwork'].front_default,
